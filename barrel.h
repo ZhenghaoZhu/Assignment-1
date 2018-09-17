@@ -42,11 +42,10 @@
 //   double get_empty_space() const
 //     Postcondition: The return value is the amount of empty space in the barrel (in liters).
 //
-// NON-MEMBER AND FRIEND functions for the barrel class:
+// NON-MEMBER functions for the barrel class:
 //   barrel operator +(const barrel& b1, const barrel& b2)
-//     Postcondition: The two barrels are stacked. A new barrel is return which has combined height, and therefore
-//                    combined the capacity or the original two barrels. The new barrel has the combined liquid
-//                    contents of the original two barrels.
+//     Postcondition: The two barrels are stacked. A new barrel is returned which has twice the height, and therefore
+//                    twice the capacity. The new barrel has the combined liquid contents of the original two barrels.
 //   bool operator ==(const barrel& b1, const barrel& b2)
 //     Postcondition: The return value is true if `b1` and `b2` have the same height and the same liquid contents.
 //
@@ -67,7 +66,7 @@ namespace data_structures_assignment_1
         // MODIFICATION MEMBER FUNCTIONS
         void add_water(double liters);
         void add_olive_oil(double liters);
-        void barrel::overflowing(double liters);
+        void overflowing(double liters);
         void drain(double liters);
         // CONSTANT MEMBER FUNCTIONS
         double get_water_liters() const;

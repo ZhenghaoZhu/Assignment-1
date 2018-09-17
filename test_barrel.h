@@ -12,17 +12,17 @@ void test_barrel()
 
     barrel1.add_water(60);
     barrel1.add_olive_oil(60);
-    double barrel1_olive_oil_liters = barrel1.get_olive_oil_liters();
-    if (barrel1_olive_oil_liters != 40)
+    double barrel1_olive_oil_quantity = barrel1.get_olive_oil_quantity();
+    if (barrel1_olive_oil_quantity != 40)
     {
-        std::cout << "Problem 1: Expected 40 olive oil quantity, but found " << barrel1_olive_oil_liters << std::endl;
+        std::cout << "Problem 1: Expected 40 olive oil quantity, but found " << barrel1_olive_oil_quantity << std::endl;
         return;
     }
     barrel1.drain(35);
-    double barrel1_water_liters = barrel1.get_water_liters();
-    if (barrel1_water_liters != 25)
+    double barrel1_water_quantity = barrel1.get_water_quantity();
+    if (barrel1_water_quantity != 25)
     {
-        std::cout << "Problem 2: Expected 25 water quantity, but found " << barrel1_water_liters << std::endl;
+        std::cout << "Problem 2: Expected 25 water quantity, but found " << barrel1_water_quantity << std::endl;
         return;
     }
     double barrel1_empty_space = barrel1.get_empty_space();
@@ -45,7 +45,7 @@ void test_barrel()
         return;
     }
     data_structures_assignment_1::barrel combined_barrel = barrel1 + barrel2;
-    if (combined_barrel.get_empty_space() != 70 || combined_barrel.get_water_liters() != 50)
+    if (combined_barrel.get_empty_space() != 70 || combined_barrel.get_water_quantity() != 50)
     {
         std::cout << "Problem 6: Combining barrel 1 and 2 seems to have produced a barrel with the wrong quantities"
                   << std::endl;
@@ -53,7 +53,7 @@ void test_barrel()
     }
     combined_barrel.add_water(110);
     combined_barrel.drain(120);
-    if (combined_barrel.get_water_liters() != 40 || combined_barrel.get_olive_oil_liters() != 40)
+    if (combined_barrel.get_water_quantity() != 40 || combined_barrel.get_olive_oil_quantity() != 40)
     {
         std::cout << "Problem 7: Draining and/or adding water in the larger barrel has produced the wrong values."
                   << std::endl;
