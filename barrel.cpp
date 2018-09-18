@@ -71,22 +71,19 @@ namespace data_structures_assignment_1
         }
         double barrel::get_empty_space() const{
             double total_liters = get_olive_oil_liters() + get_water_liters(); // Used space
-            return (get_total_capacity() - water_and_oil_liters); // Subtracting used space from total space
+            return (get_total_capacity() - total_liters); // Subtracting used space from total space
         }
-        double barrel::get_total_capacity(){
-            double total_capacity = get_height()*100.0; // Ratio of 1-100 as described in the notes
-            return total_capacity;
+        double barrel::get_total_capacity() const{
+            return (height*100.0); // Ratio of 1-100 as described in the notes
         }
         bool operator==(const barrel &s1, const barrel &s2){
             return (s1.get_height() == s2.get_height()) && // Compares height
-            (s1.get_olive_liters() == s2.get_olive_liters()) && // Compares amount of olive oil
+            (s1.get_olive_oil_liters() == s2.get_olive_oil_liters()) && // Compares amount of olive oil
             (s1.get_water_liters() == s2.get_water_liters()); // Compares amount of water
         }
-        barrel operator+(const barrel &s1, const &s2){
+        barrel operator+(const barrel &s1, const barrel &s2){
             return barrel(s1.get_height() + s2.get_height(), // Adds heights
             s1.get_water_liters() + s2.get_water_liters(), // Adds water amounts
             s1.get_olive_oil_liters() + s2.get_olive_oil_liters()); // Adds olive oil amounts
         }
-
-    }
 }

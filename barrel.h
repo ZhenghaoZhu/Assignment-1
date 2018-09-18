@@ -74,7 +74,7 @@ namespace data_structures_assignment_1
         double get_height() const;
         double get_empty_space() const;
         // FRIEND FUNCTIONS
-        barrel operator+(const barrel &s1, const barrel &s2);
+        friend barrel operator+(const barrel &s1, const barrel &s2);
 
     private:
         double height;  // The height of the barrel (in meters)
